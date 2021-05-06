@@ -53,22 +53,60 @@ const startGame =()=>{
 
         setInterval(ballMove,ballspeed)
         setInterval(iaMove,iaspeed)
-
+        setInterval(movement,20)
 
 }
 
-
-window.addEventListener('keydown',(e)=>{
-    if(e.key=='s'){
-        moveDown(e)
+var keydown = false;
+var key = ''
+const movement = () =>{
+    if(keydown && key=='s'){
+        moveDown()
     }
-    else if(e.key=='w'){
-        moveUp(e)
+    else if(keydown && key=='w'){
+        moveUp()
     }
+}
 
-     
-          
-})
+console.log(keydown)
+    window.addEventListener('keydown',(e)=>{
+        if(e.key=='s'){
+         if(!keydown) {
+            keydown = true;
+            key = 's'
+         }    
+        }
+        else if(e.key=='w'){
+            
+            if(!keydown) {
+                keydown = true;
+                key = 'w'
+             }    
+        }
+             
+    })
+
+    window.addEventListener('keyup',(e)=>{
+        if(e.key=='s'){
+         if(keydown) {
+            keydown = false;
+         }
+        }
+        else if(e.key=='w'){
+            if(keydown) {
+               keydown = false;
+            }
+           }
+             
+    })
+
+
+
+
+
+
+
+
 
 const canMoveDown = (bar) =>{
     return bar.getBoundingClientRect().bottom<=container.getBoundingClientRect().bottom
@@ -77,13 +115,13 @@ const canMoveDown = (bar) =>{
 const canMoveUp = (bar) =>{
     return bar.getBoundingClientRect().top>=container.getBoundingClientRect().top
 }
-function moveDown(e){
+function moveDown(){
     if(canMoveDown(bar1)){
     bar1.style.marginTop= bar1.offsetTop + 10 +'px'
 
     }
 }
-function moveUp(e){
+function moveUp(){
     if(canMoveUp(bar1)){
     bar1.style.marginTop= -10+ bar1.offsetTop+'px'
     }
@@ -186,7 +224,7 @@ function sound(src){
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
-    this.sound.volume = 0.5;
+    this.sound.volume = 0.2;
     document.body.appendChild(this.sound);
     this.play = function(){
         this.sound.play();

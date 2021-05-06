@@ -61,7 +61,7 @@
     flex-direction: row;
 }
 
-/*
+
 .cont:before {
     z-index: -2;
     --size: 900px;
@@ -76,7 +76,7 @@
     transition: width 0.2s ease, height 0.2s ease;
   }
 
-*/
+
 .bar1{
     z-index: 5;
     position: absolute;
