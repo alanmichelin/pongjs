@@ -1,3 +1,9 @@
+.game{
+    display: flex;
+    justify-content: space-around;
+}
+
+
 .modal {
     display: block; 
     position: fixed; 
@@ -14,9 +20,9 @@
 
     display: flex;
     background-color: #fefefe;
-    margin-top: 15%; 
-    margin-left: 25%;
-    padding: 20px;
+    margin: 15%; 
+    margin-left: 40%;
+    padding: 2%;
     border: 1px solid #888;
     width: 18%; 
     flex-direction: column;
@@ -27,12 +33,10 @@
 
 .cont{
     z-index: -10;
-    height: 800px;
-    width: 1200px;
+    height: 600px;
+    width: 1000px;
     border: 5px solid black;
-
     position: relative;
-
     background: #870000;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -42,7 +46,7 @@
     overflow: hidden;
 }
 .main{
-    width: 1200px;
+    width: 1000px;
 
 }
 .scores{

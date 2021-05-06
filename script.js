@@ -4,6 +4,35 @@ var bar1 = document.getElementById("#bar1")
 var bar2 = document.getElementById("#bar2")
 var ball = document.getElementById("#ball")
 var button = document.getElementById("#start")
+var muted = false;
+var volumeup = document.getElementById("#volumeup")
+var gameVolume = 0.1
+volumeup.addEventListener('click',(e)=>{
+    if(volumeup.className=='fas fa-volume-up fa-5x'){
+
+        volumeup.className='fas fa-volume-mute fa-5x'
+        gameVolume = 0.0
+        console.log('muted')
+    }
+    else{
+        
+        volumeup.className='fas fa-volume-up fa-5x'
+        gameVolume = 0.1
+        console.log('unmuted')
+    }
+
+})
+
+const isMuted = () =>{
+    if(!muted){
+        console.log('is:'+ muted)
+        return 0.1
+        
+    }else{
+        console.log('is:'+ muted)
+        return 0
+    }
+}
 var p1score=0
 var p2score=0
 var playerhit = new sound('playerhit.mp3')
@@ -42,8 +71,13 @@ button.addEventListener('click',(e)=>{
             iaspeed = 15
             break;
     }
-    console.log(difficulty)
-    playerName = document.getElementById("#name").value
+
+    
+    if(document.getElementById("#name").value==''){
+        playerName = 'You'
+    }else{
+        playerName = document.getElementById("#name").value
+    }
     modal.style.display = "none";
 
     startGame()
@@ -68,7 +102,7 @@ const movement = () =>{
     }
 }
 
-console.log(keydown)
+
     window.addEventListener('keydown',(e)=>{
         if(e.key=='s'){
          if(!keydown) {
@@ -224,9 +258,10 @@ function sound(src){
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
-    this.sound.volume = 0.2;
+    
     document.body.appendChild(this.sound);
     this.play = function(){
+        this.sound.volume= gameVolume
         this.sound.play();
     }
     this.stop = function(){

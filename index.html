@@ -8,19 +8,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet">
     <link rel="icon" href="icon.png">
+    <script src="https://kit.fontawesome.com/3a291cfb5f.js" crossorigin="anonymous"></script>
+
     <title>PongJS</title>
 </head>
 <body>
     
-    
+    <div class='game'>
     <div id="main" class='main'>
-        
+        <div>
+            <i class="fas fa-volume-up fa-5x" id='#volumeup'></i>
+            <!-- <i class="fas fa-volume-mute" id='#mute'></i></div> -->
         <div id="#scores" class='scores'>
-
             
             <h1 id="#player2" class='player2'>You:</h2><h1 id="#player1" class='player1'>CPU: </h2>
         </div>
+        
     <div id='#container' class='cont'>
+
         <div id='#bar1' class='bar1'></div>
         <div id='#bar2' class='bar2'></div>
         <div id="#ball" class='ball'></div>
@@ -30,7 +35,7 @@
 
 
         <div class="modal-content">
-          <p>Welcome to PONGJS, my first JavaScript Game! <br>
+          <p>Welcome to PONG.JS, my first JavaScript Game! <br>
               You take control of left bar, it moves up and down. <br>
               Your goal is to make the ball touch right border.<br>
               <strong>  Please, insert your name here:</strong>
@@ -50,7 +55,10 @@
 
           <button id="#start">Start</button>
         </div>
-</div>
+        
+        </div>
+    </div>
+    
 </body>
 <script src='script.js'></script>
 </html>
