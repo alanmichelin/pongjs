@@ -13,6 +13,8 @@ var player1Score=document.getElementById("#player2")
 var player2Score= document.getElementById("#player1")
 var modal = document.getElementById("myModal")
 var playerName
+var ballspeed 
+var iaspeed
 
 
 
@@ -25,15 +27,32 @@ let parameterX = -5
 let parameterY = -5
 let changeDirection= false;
 button.addEventListener('click',(e)=>{
+    var difficulty = document.getElementById("#difficulty").selectedIndex
+    switch(difficulty){
+        case 0: 
+        ballspeed = 10
+        iaspeed = 30
+        break;
+        case 1:
+            ballspeed = 7
+            iaspeed = 20
+        break;
+        case 2:
+            ballspeed = 6
+            iaspeed = 15
+            break;
+    }
+    console.log(difficulty)
     playerName = document.getElementById("#name").value
     modal.style.display = "none";
+
     startGame()
     player1Score.innerHTML= playerName+ ":"
 })
 const startGame =()=>{
 
-        setInterval(ballMove,10)
-        setInterval(iaMove,15)
+        setInterval(ballMove,ballspeed)
+        setInterval(iaMove,iaspeed)
 
 
 }
