@@ -30,15 +30,15 @@ button.addEventListener('click',(e)=>{
     var difficulty = document.getElementById("#difficulty").selectedIndex
     switch(difficulty){
         case 0: 
-        ballspeed = 10
+        ballspeed = 15
         iaspeed = 30
         break;
         case 1:
-            ballspeed = 7
+            ballspeed = 10
             iaspeed = 20
         break;
         case 2:
-            ballspeed = 6
+            ballspeed = 8
             iaspeed = 15
             break;
     }
@@ -65,9 +65,11 @@ window.addEventListener('keydown',(e)=>{
     else if(e.key=='w'){
         moveUp(e)
     }
+
      
           
 })
+
 const canMoveDown = (bar) =>{
     return bar.getBoundingClientRect().bottom<=container.getBoundingClientRect().bottom
 }
