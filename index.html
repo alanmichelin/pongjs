@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet">
-    <link rel="icon" href="icon.png">
-    <script src="https://kit.fontawesome.com/3a291cfb5f.js" crossorigin="anonymous"></script>
-
-    <title>PongJS</title>
-</head>
-<body>
-    
-    <div class='game'>
-    <div id="main" class='main'>
-        <div>
-            <i class="fas fa-volume-up fa-5x" id='#volumeup'></i>
-            <!-- <i class="fas fa-volume-mute" id='#mute'></i></div> -->
-        <div id="#scores" class='scores'>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet">
+      <link rel="icon" href="icon.png">
+      <script src="https://kit.fontawesome.com/3a291cfb5f.js" crossorigin="anonymous"></script>
+      <title>PongJS</title>
+   </head>
+   <body>
+      <div class='game'>
+        <div id="main" class='main'>
+            <div>
+                <!-- <i class="fas fa-volume-mute" id='#mute'></i></div> -->
+                <div id="#scores" class='scores'>
+                <h1 id="#player2" class='player2'>
+                You:</h2>
+                <h1 id="#player1" class='player1'>
+                CPU: </h2>
+                </div>
+                <div id='#container' class='cont'>
+                <div id='#bar1' class='bar1'></div>
+                <div id='#bar2' class='bar2'></div>
+                <div id="#ball" class='ball'></div>
+                </div>
+                <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <p>Welcome to PONG.JS, my first JavaScript Game! <br>
+                        You take control of left bar, it moves up and down. <br>
+                        Your goal is to make the ball touch right border.<br>
+                        <strong>  Please, insert your name here:</strong>
+                    </p>
+                    <input type="text"  id="#name" placeholder="What's your name?"><br>
+                    <h2>Controls:<br>
+                        W - move up <br>
+                        S - move down
+                    </h2>
+                    <label for="difficulty">Select difficulty:</label>
+                    <select name="difficulty" id="#difficulty">
+                        <option value="easy">Easy. Ball moves33% slower. Cpu moves 33% slower</option>
+                        <option value="medium">Medium. Default ball and cpu speed movement</option>
+                        <option value="hard">Hard. Ball moves 20% faster. Cpu moves 25% faster</option>
+                    </select>
+                    <button id="#start">Start</button>
+                </div>
+                </div>
+            </div>
             
-            <h1 id="#player2" class='player2'>You:</h2><h1 id="#player1" class='player1'>CPU: </h2>
         </div>
         
-    <div id='#container' class='cont'>
-
-        <div id='#bar1' class='bar1'></div>
-        <div id='#bar2' class='bar2'></div>
-        <div id="#ball" class='ball'></div>
-       
     </div>
-    <div id="myModal" class="modal">
-
-
-        <div class="modal-content">
-          <p>Welcome to PONG.JS, my first JavaScript Game! <br>
-              You take control of left bar, it moves up and down. <br>
-              Your goal is to make the ball touch right border.<br>
-              <strong>  Please, insert your name here:</strong>
-          </p>
-          <input type="text"  id="#name" placeholder="What's your name?"><br>
-          <h2>Controls:<br>
-            W - move up <br>
-            S - move down</h2>
-            
-            <label for="difficulty">Select difficulty:</label>
-            <select name="difficulty" id="#difficulty">
-                <option value="easy">Easy. Ball moves33% slower. Cpu moves 33% slower</option>
-                <option value="medium">Medium. Default ball and cpu speed movement</option>
-                <option value="hard">Hard. Ball moves 20% faster. Cpu moves 25% faster</option>
-            </select>
-
-
-          <button id="#start">Start</button>
+    <div class="controller">
+        <i class="fas fa-volume-up fa-5x" id='#volumeControl'></i>
         </div>
-        
-        </div>
-    </div>
-    
-</body>
-<script src='script.js'></script>
+   </body>
+   <script src='script.js'></script>
 </html>
